@@ -1,6 +1,10 @@
 const express = require('express');
 const path = require('path');
 const friendsRouter = require('./routers/friends.router.js')
+const usersRouter = require('./routers/users.router.js')
+
+//!DELETE!!
+// const { sequelize } = require('./db.js')
 
 
 const app = express();
@@ -13,6 +17,7 @@ const PORT = 4000;
 
 
 
+app.use(express.json());
 app.use((req, res, next) => {
     const start = Date.now();
     next();
@@ -20,12 +25,8 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.url} ${delta}ms`);
 })
 app.use('/friends', friendsRouter);
-app.use(express.json());
+app.use('/users', usersRouter);
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-
 
 
 

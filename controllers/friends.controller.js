@@ -32,3 +32,5 @@ module.exports = {
     getFriends,
     postFriend
 }
+
+Function 

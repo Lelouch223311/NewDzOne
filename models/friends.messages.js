@@ -19,3 +19,4 @@ const messages = [
 ]
 
 module.exports = friends,messages;
+//! NE RABOTAET !!
